@@ -1,0 +1,16 @@
+<%= search_form_for @q do |f| %>
+	<p>
+			<%= f.label :customer_of_Customer_type_email_cont %>
+			<%= f.text_field :customer_of_Customer_type_email_cont %>
+		</p>
+	<p>
+			<%= f.submit 'Search' %>
+		</p>
+<% end %>
+
+
+<h2>Orders:</h2>
+</ul>
+	<% @orders.each do |order| %>
+		 <li>Order # <%= order.to_param %> - for <%= "#{order.customer.type} #{order.customer.email}"%></li>
+	<% end %>
